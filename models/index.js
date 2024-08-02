@@ -10,4 +10,4 @@ Student.belongsTo(Teacher, {
     foreignKey: 'student_id'
 });
 
-module.exports = { User };
+module.exports = { Teacher, Student };
