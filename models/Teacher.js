@@ -2,10 +2,10 @@ const { Model, DataTypes } = require('sequelize');
 const sequelize = require('../config/connection');
 
 // create our Traveller model
-class User extends Model {}
+class Teacher extends Model { }
 
 // create fields/columns for Traveller model
-User.init(
+Teacher.init(
   {
     id: {
       type: DataTypes.INTEGER,
@@ -15,7 +15,10 @@ User.init(
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      validate: {
+        len: 2
+      }
     },
     email: {
       type: DataTypes.STRING,
@@ -24,15 +27,23 @@ User.init(
       validate: {
         isEmail: true
       }
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      unique: true,
+      validate: {
+        len: 8
+      }
     }
   },
   {
-    sequelize,
+    sequelize: client,
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: 'user'
+    modelName: 'teacher'
   }
 );
 
-module.exports = User;
+module.exports = Teacher;
