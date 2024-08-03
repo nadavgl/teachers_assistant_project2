@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Student } = require('../../models')
 
-router.get('/stduents', async (req, res) => {
+router.get('/students', async (req, res) => {
   
     try {
       const students = await Student.findAll()
