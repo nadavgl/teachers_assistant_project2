@@ -1,7 +1,14 @@
 const { Model, DataTypes } = require('sequelize');
+const { hash, compare } = require('bcrypt')
+
 const sequelize = require('../config/connection');
 
-class Teacher extends Model { }
+
+class Teacher extends Model { 
+ async validatePassword(formPassword){
+    const is_valid = await compare(formPassword, this.password)
+  }
+}
 
 // create fields/columns for teacher model
 Teacher.init(
@@ -41,7 +48,14 @@ Teacher.init(
     sequelize,
     // timestamps: false,
     freezeTableName: true,
-    modelName: 'teacher'
+    modelName: 'teacher',
+    hooks: {
+      async beforeCreate(teacher){
+        teacher.password = await hash (teacher.password, 10)
+
+        return teacher
+      }
+    }
   }
 );
 

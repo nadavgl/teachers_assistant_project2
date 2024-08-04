@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const user_routes = require('./user-routes');
+const teacher_routes = require('../teacher-routes');
 
 
-router.use('/users', user_routes);
+router.use('/teachers', teacher_routes);
 
 module.exports = router;
