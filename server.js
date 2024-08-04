@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const exphbs = require('express-handlebars');
-const Handlebars = require('handlebars');
+// const Handlebars = require('handlebars');
 
 
 const session = require("express-session");
@@ -52,6 +52,6 @@ app.set('view engine', 'handlebars');
 
 
 // turn on connection to db and server
-sequelize.sync({ force: true }).then(() => {
+sequelize.sync({ force: false }).then(() => {
     app.listen(PORT, () => console.log('Now listening'));
 });
