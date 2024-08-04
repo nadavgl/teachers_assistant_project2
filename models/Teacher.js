@@ -50,10 +50,10 @@ Teacher.init(
     freezeTableName: true,
     modelName: 'teacher',
     hooks: {
-      async beforeCreate(user){
-        user.password = await hash (user.password, 10)
+      async beforeCreate(teacher){
+        teacher.password = await hash (teacher.password, 10)
 
-        return user
+        return teacher
       }
     }
   }
