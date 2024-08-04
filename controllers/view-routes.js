@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Teacher, Student } = require('../../models');
+const { Teacher, Student } = require('../models');
 
 function redirectIfLoggedIn(req, res, next) {
   if (req.session.teacher_id) {
@@ -64,7 +64,7 @@ router.get('/dashboard', redirectGuest, async (req, res) => {
 
 // Search Page Route
 router.get('/student_profile', redirectGuest, async (req, res) => {
-  const user = await Teacher.findByPk(req.session.id, {
+  const teacher = await Teacher.findByPk(req.session.id, {
     attributes: ['name']
   });
 
