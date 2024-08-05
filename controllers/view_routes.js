@@ -2,25 +2,25 @@ const router = require('express').Router();
 const { Teacher, Student } = require('../models');
 
 
-router.get('/', async (req, res) => {
-    res.render('homepage');
-})
+// router.get('/', async (req, res) => {
+//     res.render('homepage');
+// })
 
-router.get('/register', async (req, res) => {
-    res.render('register');
-})
+// router.get('/register', async (req, res) => {
+//     res.render('register');
+// })
 
-router.get('/login', async (req, res) => {
-    res.render('login');
-})
+// router.get('/login', async (req, res) => {
+//     res.render('login');
+// })
 
-router.get('/dashboard', async (req, res) => {
-    res.render('dashboard');
-})
+// router.get('/dashboard', async (req, res) => {
+//     res.render('dashboard');
+// })
 
-router.get('/student_profile', async (req, res) => {
-    res.render('student_profile');
-})
+// router.get('/student_profile', async (req, res) => {
+//     res.render('student_profile');
+// })
 
 
 
@@ -62,7 +62,7 @@ function redirectIfLoggedIn(req, res, next) {
   // Register Page Route
   router.get('/register', redirectIfLoggedIn, (req, res) => {
     res.render('register', {
-      title: 'My Movies - Register',
+      title: "Teacher's Assistant - Register",
       errors: req.session.errors,
       register: true
     });
@@ -70,18 +70,19 @@ function redirectIfLoggedIn(req, res, next) {
     delete req.session.errors;
   });
   
-  // Favorites Page Route
+  // Student Page Route
   router.get('/dashboard', redirectGuest, async (req, res) => {
-    const teacher = await Teacher.findByPk(req.session.id, {
+    const teacher = await Teacher.findByPk(req.session.teacher_id, {
       attributes: ['name'],
       include: Student
     });
+    console.log(teacher.students)
   
     res.render('dashboard', {
-      user: teacher.get({ plain: true }),
+      teacher: teacher.get({ plain: true }),
       title: 'Teacher Assistant - Student',
       user_page: true,
-      favorites: true
+      students: true
     });
   });
   

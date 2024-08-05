@@ -1,5 +1,6 @@
 const { Teacher, Student } = require('../models');
 const { hash } = require('bcrypt');
+const client = require('../config/connection')
 
 const seedDatabase = async () => {
   await Teacher.bulkCreate([
@@ -7,6 +8,7 @@ const seedDatabase = async () => {
       name: 'Teacher One', 
       email: 'teacher1@example.com',
       password: await hash('examplepassword', 10)
+
     },
     {
       name: 'Teacher Two', 
@@ -19,12 +21,12 @@ const seedDatabase = async () => {
     {
       name: 'Student One',
       grade: 90,
-      teacher_id: 1
+      teacherId: 1
     },
     {
       name: 'Student Two',
       grade: 85,
-      teacher_id: 2
+      teacherId: 2
     }
   ]);
   
@@ -32,6 +34,5 @@ const seedDatabase = async () => {
   console.log('Database seeded!');
   process.exit(0);
 };
+client.sync({force:true}).then(seedDatabase)
 
-
-seedDatabase();
