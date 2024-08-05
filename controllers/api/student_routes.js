@@ -48,7 +48,24 @@ router.put('/student/:student_id', async (req, res) => {
   res.json(student[1])
 })
 
-// get/view one single student by id
+// Get One student by id
+router.get('/student:student_id', async (req, res) => {
+  try {
+    const student = await Student.findByPk(req.params.student_id);
+
+    if (!student) {
+      return res.status(404).json({
+        message: 'Student not found'
+      });
+    }
+    res.json(student);
+  } catch (error) {
+    res.status(500).json({
+      message: 'An error occurred while retrieving the student',
+      error: error.message
+    });
+  }
+});
 
 
 // Delete student
