@@ -40,12 +40,19 @@ router.get('/:student_id', async (req, res) => {
   try {
     const student = await Student.findByPk(req.params.student_id);
 
-router.put('student/:student_id', async (req, res) => {
-  const student = await Student.findByPk(
-    
-  )
-})
-
+    if (!student) {
+      return res.status(404).json({
+        message: 'Student not found'
+      });
+    }
+    res.json(student);
+  } catch (error) {
+    res.status(500).json({
+      message: 'An error occurred while retrieving the student',
+      error: error.message
+    });
+  }
+});
 
 // Delete student
 router.delete('/remove/:student_id', async (req, res) => {
