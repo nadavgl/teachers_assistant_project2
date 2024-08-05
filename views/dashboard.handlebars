@@ -9,9 +9,12 @@
         <p>Bus Number: {{#if bus_number}}{{bus_number}}{{else}} N/A {{/if}}</p>
         <p>Teacher Notes: {{#if notes}}{{notes}}{{else}} None {{/if}}</p>
 
+        <a href="/edit/{{id}}">Edit Student</a>
+
         <form action="/students/remove/{{id}}?_method=DELETE" method="POST">
             <button type="submit">Delete</button>
         </form>
+
     </div>
     {{/each}}
     {{else}}
