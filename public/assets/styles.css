@@ -6,15 +6,46 @@ body {
 
 /* Global Styles */
 
+h1 {
+    font-family: "Rock Salt",
+        cursive !important;
+    text-shadow: -8px 8px 5px rgba(0, 0, 0, 0.2);
+}
+
 * {
     font-family: "Manjari",
-        sans-serif !important;
+        sans-serif;
+    color: rgb(23, 48, 69) !important;
     margin: 10px;
     padding: 0px;
     box-sizing: border-box;
 }
 
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./images/notepad-3.png');
+    opacity: .4;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.button {
+    box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.3);
+}
+
 #login-form,
 #register-form {
     width: 60%;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
 }
