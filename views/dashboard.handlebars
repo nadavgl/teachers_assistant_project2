@@ -1,9 +1,9 @@
-<h1 class="title is-4 pl-4">Your Classroom:</h1>
+<h2 class="title is-4 pl-4">Your Classroom:</h2>
 
 {{!-- use handlebars logic to show this only if they have no students --}}
 {{!-- <p>you currently do not have any students</p> --}}
-
 <section class="grid has-text-centered">
+{{#if teacher.students}}
     {{#each teacher.students}}
     <div>
         <h3>{{name}}</h3>
@@ -12,5 +12,12 @@
         <a href="/student/remove/1">Delete Student</a>
     </div>
     {{/each}}
-
+{{else}}
+<h3>No Students have been added!</h3>
+{{/if}}
 </section>
+
+
+{{!-- <form action="/students/{{id}}" method="DELETE">
+    <button type="submit">Delete Student</button>
+</form> --}}
