@@ -6,34 +6,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{title}}</title>
 
-    <!-- Header Font - "Manjari" -->
+    <!-- Load Font - "Manjari" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Jura:wght@700&family=Manjari:wght@100;400;700&display=swap"
         rel="stylesheet">
 
+    {{!-- Font: Rock Salt --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rock+Salt&display=swap" rel="stylesheet">
+
     <!-- CSS Links -->
-    <link rel="stylesheet" href="../../public/assets/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
+
+
+    <link rel="stylesheet" href="/assets/styles.css">
 
 </head>
 
 <body>
 
-    <header id="banner">
-        <h1>Teacher's Assistant</h1>
+    <header class="has-text-centered">
+
+        <h1 class="title is-1 mb-6 p-6">Teacher's Assistant</h1>
+
 
         <nav>
-            <a href="/login">Login In</a>
+
         </nav>
 
     </header>
 
-    {{!-- <div class="background-image"></div> --}}
+    <div class="background-image"></div>
 
-    {{{body}}}
+    <body>
+        {{{body}}}
+    </body>
+
 
     <footer>
-        <p>&copy; 2024 Teacher's Assistant. All Rights Reserved.</p>
+        <div class="has-text-centered">
+            <p>&copy; 2024 Teacher's Assistant. All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>
