@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Teacher } = require('../models');
 
-// Register User
+// Register Teacher
 router.post('/register', async (req, res) => {
   try {
     const teacher = await Teacher.create(req.body);
@@ -17,7 +17,7 @@ router.post('/register', async (req, res) => {
   }
 });
 
-// Log In User
+// Log In Teacher
 router.post('/login', async (req, res) => {
   const formData = req.body;
   // Grap the user by the form email that was provided
