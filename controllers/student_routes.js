@@ -1,7 +1,5 @@
 const router = require('express').Router();
-const { Student } = require('../../models');
-
-
+const { Student } = require('../models');
 
 // Create a student
 router.post('/', async (request, response) => {
@@ -20,18 +18,7 @@ router.post('/', async (request, response) => {
     })
     response.json(errors)
   }
-
-
 })
-
-// Get all students
-router.get('/', async (req, res) => {
-  const students = await Student.findAll()
-  // const plainData = students.map(studentObj => studentObj.get({ plain: true }));
-
-  // console.log(plainData[2].course.course_name)
-  res.json(students)
-});
 
 // Update student
 router.put('/:student_id', async (req, res) => {
@@ -67,17 +54,14 @@ router.get('/:student_id', async (req, res) => {
   }
 });
 
-
 // Delete student
-router.delete('/:student_id', async (req, res) => {
+router.delete('/remove/:student_id', async (req, res) => {
   await Student.destroy({
     where: {
       id: req.params.student_id
     }
   })
-  res.json({
-    message: 'Student deleted succesfully'
-  })
+  res.redirect('/dashboard');
 })
 
 module.exports = router;
