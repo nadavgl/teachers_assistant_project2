@@ -35,7 +35,7 @@ router.post('/login', async (req, res) => {
 
   // Check to see if they gave us the correct password
   const valid_pass = await teacher.validatePassword(formData.password);
-
+console.log(valid_pass)
   if (!valid_pass) {
     req.session.errors = ['Password is invalid'];
     return res.redirect('/login');
