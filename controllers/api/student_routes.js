@@ -50,6 +50,11 @@ router.put('/student/:student_id', async (req, res) => {
 
 // get/view one single student by id
 
+router.put('student/:student_id', async (req, res) => {
+  const student = await Student.findByPk(
+    
+  )
+})
 
 
 // Delete student
