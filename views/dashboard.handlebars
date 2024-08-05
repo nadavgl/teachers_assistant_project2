@@ -1,16 +1,16 @@
-<h2 class="title is-4 ml-6 pl-4">Your Classroom:</h2>
+<h1 class="title is-4 ml-6 pl-4">Your Classroom:</h1>
 
-<section class="grid has-text-centered">
+<section class="grid mx-6">
     {{#if teacher.students}}
     {{#each teacher.students}}
-    <div>
+    <div class="cell is-gap-5 p-2">
         <h3>{{name}}</h3>
         <p>Grade: {{grade}}</p>
         <p>Bus Number: {{#if bus_number}}{{bus_number}}{{else}} N/A {{/if}}</p>
         <p>Teacher Notes: {{#if notes}}{{notes}}{{else}} None {{/if}}</p>
 
         <form action="/students/remove/{{id}}?_method=DELETE" method="POST">
-            <button type="submit">Delete Student</button>
+            <button type="submit">Delete</button>
         </form>
     </div>
     {{/each}}
