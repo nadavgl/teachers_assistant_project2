@@ -28,24 +28,39 @@
 
 <body>
 
-    <header class="has-text-centered">
+    <header class="is-flex is-flex-direction-row is-justify-content-space-between  mt-6">
+        <a href="/">
+            <h1 class="title is-3 ml-6">Teacher's Assistant</h1>
+        </a>
+        <nav class="row align center"></nav>
+        {{#if teacher}}
+        <p>Welcome, {{teacher.name}}</p>
 
-        <h1 class="title is-1">Teacher's Assistant</h1>
+        <a href="/dashboard" class="{{#if dashboard}}active{{/if}}">Your Classroom</a>
 
-        <div class="banner-image"></div>
+        <a href="/add" class="{{#if add}}active{{/if}}">Add Student</a>
 
-        <nav>
+        <a href="/logout">Log Out</a>
 
+        {{else}}
+        {{#if landing}}
+        <a href="/login">Login or Register</a>
+        {{/if}}
+
+        {{#if login}}
+        <a href="/register">Register</a>
+        {{/if}}
+
+        {{#if register}}
+        <a href="/login">Log In</a>
+        {{/if}}
+        {{/if}}
         </nav>
-
     </header>
 
     <div class="background-image"></div>
 
-    <body>
-        {{{body}}}
-    </body>
-
+    {{{body}}}
 
     <footer>
         <div class="has-text-centered">

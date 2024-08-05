@@ -14,10 +14,13 @@ body {
     box-sizing: border-box;
 }
 
+header {
+    margin: 30px;
+    padding: 5px;
+}
+
 h1 {
     text-shadow: -8px 8px 5px rgba(0, 0, 0, 0.2);
-    margin: 60px 0;
-    padding: 60px;
     /* background-image: url(./images/label-sticker.png); */
     /* background-size: 50%; */
     /* background-size: auto;

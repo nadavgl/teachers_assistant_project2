@@ -1,9 +1,7 @@
-<h2 class="title is-4 pl-4">Your Classroom:</h2>
+<h2 class="title is-4 ml-6 pl-4">Your Classroom:</h2>
 
-{{!-- use handlebars logic to show this only if they have no students --}}
-{{!-- <p>you currently do not have any students</p> --}}
 <section class="grid has-text-centered">
-{{#if teacher.students}}
+    {{#if teacher.students}}
     {{#each teacher.students}}
     <div>
         <h3>{{name}}</h3>
@@ -15,9 +13,9 @@
             </form>
     </div>
     {{/each}}
-{{else}}
-<h3>No Students have been added!</h3>
-{{/if}}
+    {{else}}
+    <h3>No Students have been added!</h3>
+    {{/if}}
 </section>
 
 
