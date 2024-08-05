@@ -13,27 +13,36 @@
         rel="stylesheet">
 
     <!-- CSS Links -->
-    <link rel="stylesheet" href="../../public/assets/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.2/css/bulma.min.css">
+
+
+
+    <link rel="stylesheet" href="/assets/styles.css">
 
 </head>
 
 <body>
 
-    <header id="banner">
-        <h1>Teacher's Assistant</h1>
+    <header id="banner" class="has-text-centered">
+        <h1 class="title is-1 p-6">Teacher's Assistant</h1>
 
         <nav>
-            <a href="/login">Login In</a>
+
         </nav>
 
     </header>
 
     {{!-- <div class="background-image"></div> --}}
 
-    {{{body}}}
+    <body>
+        {{{body}}}
+    </body>
 
-    <footer>
-        <p>&copy; 2024 Teacher's Assistant. All Rights Reserved.</p>
+
+    <footer class="footer">
+        <div class="has-text-centered">
+            <p>&copy; 2024 Teacher's Assistant. All Rights Reserved.</p>
+        </div>
     </footer>
 
 </body>

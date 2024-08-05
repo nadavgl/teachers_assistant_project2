@@ -17,38 +17,35 @@ const PORT = process.env.PORT || 3001;
 
 const hbs = exphbs.create({});
 
-
-
 // Inform Express.js on which template engine to use
-
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
-// turn on routes
 
+// turn on routes
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-  app.use(
+app.use(
     session({
-      secret: process.env.SESSION_SECRET,
-      store: new SequelizeStore({
-        db: client,
-      }),
-      saveUninitialized: false,
-      resave: false, // we support the touch method so per the express-session docs this should be set to false
-      // proxy: true, // if you do SSL outside of node.
-      // Only send a cookie that cannot be accessed by Browser JS
-      cookie: {
-        httpOnly: true
-      }
+        secret: process.env.SESSION_SECRET,
+        store: new SequelizeStore({
+            db: client,
+        }),
+        saveUninitialized: false,
+        resave: false, // we support the touch method so per the express-session docs this should be set to false
+        // proxy: true, // if you do SSL outside of node.
+        // Only send a cookie that cannot be accessed by Browser JS
+        cookie: {
+            httpOnly: true
+        }
     })
-  );
-  
+);
 
-  app.use('/',controllers);
+
+app.use('/', controllers);
 
 
 // turn on connection to db and server
