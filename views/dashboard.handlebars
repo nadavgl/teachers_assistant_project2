@@ -4,40 +4,12 @@
 {{!-- <p>you currently do not have any students</p> --}}
 
 <section class="grid has-text-centered">
+    {{#each teacher.students}}
     <div>
-        <h3>student name</h3>
-        <p>grade</p>
+        <h3>{{name}}</h3>
+        <p>Grade: {{grade}}</p>
         <a href="/student/remove/1">Delete Student</a>
     </div>
-
-    <div>
-        <h3>student name</h3>
-        <p>grade</p>
-        <a href="/student/remove/1">Delete Student</a>
-    </div>
-
-    <div>
-        <h3>student name</h3>
-        <p>grade</p>
-        <a href="/student/remove/1">Delete Student</a>
-    </div>
-
-    <div>
-        <h3>student name</h3>
-        <p>grade</p>
-        <a href="/student/remove/1">Delete Student</a>
-    </div>
-
-    <div>
-        <h3>student name</h3>
-        <p>grade</p>
-        <a href="/student/remove/1">Delete Student</a>
-    </div>
-
-    <div>
-        <h3>student name</h3>
-        <p>grade</p>
-        <a href="/student/remove/1">Delete Student</a>
-    </div>
+    {{/each}}
 
 </section>

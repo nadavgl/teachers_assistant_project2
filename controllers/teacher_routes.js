@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Teacher } = require('../../models');
+const { Teacher } = require('../models');
 
 // Register User
 router.post('/register', async (req, res) => {
@@ -35,7 +35,6 @@ router.post('/login', async (req, res) => {
 
   // Check to see if they gave us the correct password
   const valid_pass = await teacher.validatePassword(formData.password);
-console.log(valid_pass)
   if (!valid_pass) {
     req.session.errors = ['Password is invalid'];
     return res.redirect('/login');
@@ -43,7 +42,7 @@ console.log(valid_pass)
 
   // Log in the user by creating a session
   req.session.teacher_id = teacher.id;
-
+console.log(teacher.id)
   // Ensuring that the session data has been saved before we redirect them
   req.session.save((err) => {
     if (err) return console.log('session error', err);
