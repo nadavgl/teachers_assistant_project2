@@ -5,13 +5,13 @@ const client = require('../config/connection')
 const seedDatabase = async () => {
   await Teacher.bulkCreate([
     {
-      name: 'Teacher One', 
+      name: 'Teacher One',
       email: 'teacher1@example.com',
       password: await hash('examplepassword', 10)
 
     },
     {
-      name: 'Teacher Two', 
+      name: 'Teacher Two',
       email: 'teacher2@example.com',
       password: await hash('examplepassword', 10)
     }
@@ -29,10 +29,10 @@ const seedDatabase = async () => {
       teacherId: 2
     }
   ]);
-  
+
 
   console.log('Database seeded!');
   process.exit(0);
 };
-client.sync({force:true}).then(seedDatabase)
+client.sync({ force: true }).then(seedDatabase)
 

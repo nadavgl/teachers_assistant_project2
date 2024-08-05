@@ -3,6 +3,10 @@
 {{!-- use handlebars logic to show this only if they have no students --}}
 {{!-- <p>you currently do not have any students</p> --}}
 
+<aside>
+    <a href="/add_student" class="button is-success"> Add Student</a>
+</aside>
+
 <section class="grid has-text-centered">
     {{#each teacher.students}}
     <div>
