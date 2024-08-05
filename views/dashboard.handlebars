@@ -6,11 +6,12 @@
     <div>
         <h3>{{name}}</h3>
         <p>Grade: {{grade}}</p>
-        {{!-- <form id="login-form" class="container" action="/login" method="Post"> --}}
-            {{!-- <a id="delete-button" method="Delete" href="/student/remove/1">Delete Student</a> --}}
-            <form action="/students/remove/{{id}}?_method=DELETE" method="POST">
-                <button type="submit">Delete Student</button>
-            </form>
+        <p>Bus Number: {{#if bus_number}}{{bus_number}}{{else}} N/A {{/if}}</p>
+        <p>Teacher Notes: {{#if notes}}{{notes}}{{else}} None {{/if}}</p>
+
+        <form action="/students/remove/{{id}}?_method=DELETE" method="POST">
+            <button type="submit">Delete Student</button>
+        </form>
     </div>
     {{/each}}
     {{else}}

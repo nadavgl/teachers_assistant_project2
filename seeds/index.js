@@ -20,13 +20,17 @@ const seedDatabase = async () => {
   await Student.bulkCreate([
     {
       name: 'Student One',
-      grade: 90,
-      teacherId: 1
+      grade: '1st Grade',
+      bus_number: '1',
+      teacherId: 1,
+      notes: 'has peanut allergy'
     },
     {
       name: 'Student Two',
       grade: 85,
-      teacherId: 2
+      bus_number: '1',
+      teacherId: 2,
+      notes: 'has 1:1 aide'
     }
   ]);
 

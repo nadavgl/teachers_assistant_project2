@@ -1,1 +1,61 @@
-<h2>add</h2>
+<form id="add-student-form" class="m-6 is-flex is-flex-direction-column " action="/students/add" method="POST">
+    <div class="field">
+        <label class="label">Name: </label>
+        <div class="control">
+            <input name="name" class="input" type="text" placeholder="student's full name">
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Grade</label>
+        <div class="control">
+            <div class="select">
+                <select name="grade">
+                    <option>Pre-School</option>
+                    <option>Kindergarten</option>
+                    <option>1st Grade</option>
+                    <option>2nd Grade</option>
+                    <option>3rd Grade</option>
+                    <option>4th Grade</option>
+                    <option>5th Grade</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+    <div class="field">
+        <label class="label">Bus Number</label>
+        <div class="control">
+            <div class="select">
+                <select name="bus_number">
+                    <option value="">None</option>
+                    <option>1</option>
+                    <option>1A</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>B120</option>
+                    <option>B121</option>
+                </select>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="field">
+        <label class="label">Things to Note about Student:</label>
+        <div class="control">
+            <textarea name="notes" class="textarea" placeholder="type notes here"></textarea>
+        </div>
+    </div>
+
+    <div class="field is-grouped">
+        <div class="control">
+            <button class="button is-link">Submit</button>
+        </div>
+        <div class="control">
+            <a href="/dashboard" class="button is-link is-light">Cancel</a>
+        </div>
+    </div>
+</form>
