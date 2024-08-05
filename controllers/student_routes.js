@@ -22,8 +22,8 @@ router.post('/add', async (req, res) => {
 })
 
 // Update student
-router.put('/:student_id', async (req, res) => {
-  const student = await Student.update(
+router.put('/edit/:student_id', async (req, res) => {
+  await Student.update(
     req.body,
     {
       where: {
@@ -33,7 +33,7 @@ router.put('/:student_id', async (req, res) => {
       plain: true
     }
   )
-  res.json(student[1])
+  res.redirect('/dashboard')
 })
 
 
