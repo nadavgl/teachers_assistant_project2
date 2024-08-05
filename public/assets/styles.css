@@ -46,12 +46,26 @@ h1 {
     box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
+#delete-btn {
+    background-image: url('./images/eraser.png');
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+
 form {
     width: 60% !important;
 }
 
 #add-student-form {
     margin-left: 25% !important;
+}
+
+.cell {
+    background-color: rgb(170, 241, 238);
+    border: 2px solid rgb(150, 212, 209);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 footer {

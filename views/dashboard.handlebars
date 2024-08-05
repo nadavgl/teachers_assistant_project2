@@ -3,14 +3,14 @@
 <section class="grid mx-6">
     {{#if teacher.students}}
     {{#each teacher.students}}
-    <div class="cell is-gap-5 p-2">
-        <h3>{{name}}</h3>
-        <p>Grade: {{grade}}</p>
+    <div class="cell p-2">
+        <h3 class="is-size-5 has-text-weight-bold">{{name}}</h3>
+        <p><span class="has-text-weight-bold">Grade:</span> {{grade}}</p>
         <p>Bus Number: {{#if bus_number}}{{bus_number}}{{else}} N/A {{/if}}</p>
         <p>Teacher Notes: {{#if notes}}{{notes}}{{else}} None {{/if}}</p>
 
         <form action="/students/remove/{{id}}?_method=DELETE" method="POST">
-            <button type="submit">Delete</button>
+            <button id="delete-btn" class="p-3" type="submit">Delete</button>
         </form>
     </div>
     {{/each}}
