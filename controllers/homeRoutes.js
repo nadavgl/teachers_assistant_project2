@@ -62,7 +62,7 @@ function redirectIfLoggedIn(req, res, next) {
   // Register Page Route
   router.get('/register', redirectIfLoggedIn, (req, res) => {
     res.render('register', {
-      title: 'My Movies - Register',
+      title: "Teacher's Assistant - Register",
       errors: req.session.errors,
       register: true
     });
@@ -70,7 +70,7 @@ function redirectIfLoggedIn(req, res, next) {
     delete req.session.errors;
   });
   
-  // Favorites Page Route
+  // Student Page Route
   router.get('/dashboard', redirectGuest, async (req, res) => {
     const teacher = await Teacher.findByPk(req.session.id, {
       attributes: ['name'],
@@ -81,7 +81,7 @@ function redirectIfLoggedIn(req, res, next) {
       user: teacher.get({ plain: true }),
       title: 'Teacher Assistant - Student',
       user_page: true,
-      favorites: true
+      students: true
     });
   });
   

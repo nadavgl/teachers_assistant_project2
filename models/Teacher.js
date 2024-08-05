@@ -7,6 +7,8 @@ const sequelize = require('../config/connection');
 class Teacher extends Model { 
  async validatePassword(formPassword){
     const is_valid = await compare(formPassword, this.password)
+
+    return is_valid
   }
 }
 
