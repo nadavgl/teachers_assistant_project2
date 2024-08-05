@@ -1,10 +1,8 @@
 const router = require('express').Router();
 const { Student } = require('../models');
 
-
-
 // Create a student
-router.post('/students', async (request, response) => {
+router.post('/', async (request, response) => {
   const formData = request.body;
   try {
     const student = await Student.create(formData)
@@ -20,18 +18,7 @@ router.post('/students', async (request, response) => {
     })
     response.json(errors)
   }
-
-
 })
-
-// Get all students
-router.get('/', async (req, res) => {
-  consts = await Student.findAll()
-  // const plainData =s.map(studentObj => studentObj.get({ plain: true }));
-
-  // console.log(plainData[2].course.course_name)
-  res.json(students)
-});
 
 // Update student
 router.put('/:student_id', async (req, res) => {
@@ -48,11 +35,26 @@ router.put('/:student_id', async (req, res) => {
   res.json(student[1])
 })
 
-// get/view one single student by id
+// Get One student by id
+router.get('/:student_id', async (req, res) => {
+  try {
+    const student = await Student.findByPk(req.params.student_id);
 
+    if (!student) {
+      return res.status(404).json({
+        message: 'Student not found'
+      });
+    }
+    res.json(student);
+  } catch (error) {
+    res.status(500).json({
+      message: 'An error occurred while retrieving the student',
+      error: error.message
+    });
+  }
+});
 
 // Delete student
-
 router.delete('/remove/:student_id', async (req, res) => {
   await Student.destroy({
     where: {
