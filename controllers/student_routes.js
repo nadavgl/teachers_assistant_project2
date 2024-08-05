@@ -2,21 +2,22 @@ const router = require('express').Router();
 const { Student } = require('../models');
 
 // Create a student
-router.post('/', async (request, response) => {
-  const formData = request.body;
+router.post('/add', async (req, res) => {
+  const formData = req.body;
   try {
-    const student = await Student.create(formData)
-    response.json({
-      message: 'Student created Sucessfully',
-      student: student
+    await Student.create({
+      ...formData,
+      teacherId: req.session.teacher_id
     })
+    res.redirect('/dashboard')
   } catch (error) {
+    console.log('add error', error);
     const errors = error.errors.map((errObj) => {
       return {
         message: errObj.message
       }
     })
-    response.json(errors)
+    res.redirect('/add')
   }
 })
 
