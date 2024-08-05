@@ -10,7 +10,7 @@
         <label class="label">Grade</label>
         <div class="control">
             <div class="select">
-                <select value="{{student.grade}}" name="grade">
+                <select id="grade-select" name="grade">
                     <option>Pre-School</option>
                     <option>Kindergarten</option>
                     <option>1st Grade</option>
@@ -59,3 +59,14 @@
         </div>
     </div>
 </form>
+
+<script>
+    const options = document.querySelectorAll('#grade-select option');
+    const grade = '{{student.grade}}';//gives grade with render
+    
+    options.forEach((option) => {
+        if (option.value === grade) {
+            option.selected = true;
+        }
+    })
+</script>
