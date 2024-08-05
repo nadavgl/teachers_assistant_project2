@@ -28,33 +28,35 @@
 
 <body data-theme="light">
 
-    <header class="is-flex is-flex-direction-row is-justify-content-space-between  mt-6">
+    <header class="is-flex is-flex-direction-row is-justify-content-space-between mt-6">
         <a href="/">
-            <h1 class="title is-3 ml-6">Teacher's Assistant</h1>
+            <h1 class="title is-3 ml-5">
+                Teacher's Assistant
+            </h1>
         </a>
-        <nav class="row align center"></nav>
-        {{#if teacher}}
-        <p>Welcome, {{teacher.name}}</p>
+        <nav class="is-flex is-flex-direction-row is-justify-content-space-between mt-3">
+            {{#if teacher}}
+            <p class="mx-3">Welcome, {{teacher.name}}</p>
 
-        <a href="/dashboard" class="{{#if dashboard}}active{{/if}}">Your Classroom</a>
+            <a class="mx-3" href="/dashboard" class="{{#if dashboard}}active{{/if}}">Your Classroom</a>
 
-        <a href="/add" class="{{#if add}}active{{/if}}">Add Student</a>
+            <a class="mx-3" href="/add" class="{{#if add}}active{{/if}}">Add Student</a>
 
-        <a href="/logout">Log Out</a>
+            <a class="mx-3" href="/logout">Log Out</a>
 
-        {{else}}
-        {{#if landing}}
-        <a href="/login">Login or Register</a>
-        {{/if}}
+            {{else}}
+            {{#if landing}}
+            <a href="/login">Login or Register</a>
+            {{/if}}
 
-        {{#if login}}
-        <a href="/register">Register</a>
-        {{/if}}
+            {{#if login}}
+            <a href="/register">Register</a>
+            {{/if}}
 
-        {{#if register}}
-        <a href="/login">Log In</a>
-        {{/if}}
-        {{/if}}
+            {{#if register}}
+            <a href="/login">Log In</a>
+            {{/if}}
+            {{/if}}
         </nav>
     </header>
 

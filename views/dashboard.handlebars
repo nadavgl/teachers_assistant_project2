@@ -6,8 +6,15 @@
     <div>
         <h3>{{name}}</h3>
         <p>Grade: {{grade}}</p>
-        <button id = "delete-button" class="container" action="/student:student_id" method="DELETE">
-        <a href="/student/remove/1">Delete Student</a>
+        <p>Bus Number: {{#if bus_number}}{{bus_number}}{{else}} N/A {{/if}}</p>
+        <p>Teacher Notes: {{#if notes}}{{notes}}{{else}} None {{/if}}</p>
+
+        <a href="/edit/{{id}}">Edit Student</a>
+
+        <form action="/students/remove/{{id}}?_method=DELETE" method="POST">
+            <button type="submit">Delete Student</button>
+        </form>
+
     </div>
     {{/each}}
     {{else}}

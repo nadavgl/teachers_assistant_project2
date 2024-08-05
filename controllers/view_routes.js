@@ -100,14 +100,16 @@ router.get('/add', redirectGuest, async (req, res) => {
 });
 
 // Search Page Route
-router.get('/student_profile', redirectGuest, async (req, res) => {
-  const teacher = await Teacher.findByPk(req.session.id, {
+router.get('/edit/:student_id', redirectGuest, async (req, res) => {
+  const teacher = await Teacher.findByPk(req.session.teacher_id, {
     attributes: ['name']
   });
+  const student = await Student.findByPk(req.params.student_id);
 
-  res.render('student_profile', {
+  res.render('edit', {
     user: teacher.get({ plain: true }),
     title: 'Teacher Assistant - Search',
+    student: student.get({ plain: true}),
     user_page: true,
     search: true
   });

@@ -38,7 +38,7 @@ h1 {
     background-image: url('./images/notepad-3.png');
     opacity: .4;
     background-size: cover;
-    background-repeat: no-repeat;
+    background-repeat: repeat-y;
     z-index: -3;
 }
 
@@ -46,9 +46,12 @@ h1 {
     box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
-#login-form,
-#register-form {
-    width: 60%;
+form {
+    width: 60% !important;
+}
+
+#add-student-form {
+    margin-left: 25% !important;
 }
 
 footer {

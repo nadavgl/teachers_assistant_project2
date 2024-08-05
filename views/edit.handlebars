@@ -1,8 +1,8 @@
-<form id="add-student-form" class="m-6 is-flex is-flex-direction-column " action="/students/add" method="POST">
+<form id="add-student-form" class="m-6 is-flex is-flex-direction-column " action="/students/edit" method="POST">
     <div class="field">
         <label class="label">Name: </label>
         <div class="control">
-            <input name="name" class="input" type="text" placeholder="student's full name">
+            <input value="{{student.name}}" name="name" class="input" type="text" placeholder="student's full name">
         </div>
     </div>
 
@@ -10,7 +10,7 @@
         <label class="label">Grade</label>
         <div class="control">
             <div class="select">
-                <select name="grade">
+                <select value="{{student.grade}}" name="grade">
                     <option>Pre-School</option>
                     <option>Kindergarten</option>
                     <option>1st Grade</option>
@@ -27,7 +27,7 @@
         <label class="label">Bus Number</label>
         <div class="control">
             <div class="select">
-                <select name="bus_number">
+                <select value="{{student.bus_number}}" name="bus_number">
                     <option value="">None</option>
                     <option>1</option>
                     <option>1A</option>
@@ -46,7 +46,7 @@
     <div class="field">
         <label class="label">Things to Note about Student:</label>
         <div class="control">
-            <textarea name="notes" class="textarea" placeholder="type notes here"></textarea>
+            <textarea name="notes" class="textarea" placeholder="type notes here">{{student.notes}}</textarea>
         </div>
     </div>
 
