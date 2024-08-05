@@ -2,14 +2,25 @@
 
 {{!-- use handlebars logic to show this only if they have no students --}}
 {{!-- <p>you currently do not have any students</p> --}}
-
 <section class="grid has-text-centered">
+{{#if teacher.students}}
     {{#each teacher.students}}
     <div>
         <h3>{{name}}</h3>
         <p>Grade: {{grade}}</p>
-        <a href="/student/remove/1">Delete Student</a>
+        {{!-- <form id="login-form" class="container" action="/login" method="Post"> --}}
+            {{!-- <a id="delete-button" method="Delete" href="/student/remove/1">Delete Student</a> --}}
+            <form action="/students/remove/{{id}}?_method=DELETE" method="POST">
+                <button type="submit">Delete Student</button>
+            </form>
     </div>
     {{/each}}
-
+{{else}}
+<h3>No Students have been added!</h3>
+{{/if}}
 </section>
+
+
+{{!-- <form action="/students/{{id}}" method="DELETE">
+    <button type="submit">Delete Student</button>
+</form> --}}
