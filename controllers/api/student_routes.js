@@ -4,7 +4,7 @@ const { Student } = require('../../models');
 
 
 // Create a student
-router.post('/students', async (request, response) => {
+router.post('/', async (request, response) => {
   const formData = request.body;
   try {
     const student = await Student.create(formData)
@@ -25,7 +25,7 @@ router.post('/students', async (request, response) => {
 })
 
 // Get all students
-router.get('/students', async (req, res) => {
+router.get('/', async (req, res) => {
   const students = await Student.findAll()
   // const plainData = students.map(studentObj => studentObj.get({ plain: true }));
 
@@ -34,7 +34,7 @@ router.get('/students', async (req, res) => {
 });
 
 // Update student
-router.put('/student/:student_id', async (req, res) => {
+router.put('/:student_id', async (req, res) => {
   const student = await Student.update(
     req.body,
     {
@@ -49,7 +49,7 @@ router.put('/student/:student_id', async (req, res) => {
 })
 
 // Get One student by id
-router.get('/student:student_id', async (req, res) => {
+router.get('/:student_id', async (req, res) => {
   try {
     const student = await Student.findByPk(req.params.student_id);
 
@@ -69,8 +69,7 @@ router.get('/student:student_id', async (req, res) => {
 
 
 // Delete student
-
-router.delete('/student/:student_id', async (req, res) => {
+router.delete('/:student_id', async (req, res) => {
   await Student.destroy({
     where: {
       id: req.params.student_id
