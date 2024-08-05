@@ -49,6 +49,7 @@ router.put('/student/:student_id', async (req, res) => {
   })
   
 
+
 // Delete student
 
 router.delete('/student/:student_id', async (req, res) =>{
