@@ -6,15 +6,17 @@
     box-sizing: border-box;
 }
 
-html,
-body {
-    height: 100%;
+html {
+    min-height: 100% !important;
+    display: flex;
 }
+
 
 body {
     background-image: linear-gradient(rgba(250, 250, 250, .7), rgba(250, 250, 250, .7)), url('./images/wide-notebook-1.jpg');
     background-size: cover;
     background-repeat: no-repeat;
+    flex: 1;
 }
 
 /* Global classes */
@@ -33,22 +35,6 @@ header {
 
 h1.title {
     text-shadow: -8px 8px 5px rgba(0, 0, 0, 0.2);
-
-}
-
-.background-image {
-    position: absolute;
-    background-position: center;
-    /* top: 0; */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-
-    opacity: .4;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -3;
 }
 
 .button {
@@ -111,5 +97,11 @@ form:not(.cell form) {
     header nav a,
     header p {
         font-size: .85rem;
+    }
+}
+
+@media(max-width: 450px) {
+    .student-wrap .grid {
+        grid-template-columns: 1fr !important;
     }
 }
