@@ -9,7 +9,12 @@
 html,
 body {
     height: 100%;
+}
 
+body {
+    background-image: linear-gradient(rgba(250, 250, 250, .7), rgba(250, 250, 250, .7)), url('./images/wide-notebook-1.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 
 /* Global classes */
@@ -26,23 +31,20 @@ header {
     padding: 5px;
 }
 
-h1 {
+h1.title {
     text-shadow: -8px 8px 5px rgba(0, 0, 0, 0.2);
-    /* background-image: url(./images/label-sticker.png); */
-    /* background-size: 50%; */
-    /* background-size: auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 1; */
+
 }
 
 .background-image {
     position: absolute;
-    top: 0;
+    background-position: center;
+    /* top: 0; */
+    bottom: 0;
     left: 0;
     width: 100%;
-    height: 100%;
-    background-image: url('./images/wide-notebook-1.jpg');
+    min-height: 100%;
+
     opacity: .4;
     background-size: cover;
     background-repeat: no-repeat;
@@ -93,4 +95,21 @@ form:not(.cell form) {
 .cell-header {
     border-bottom: 1px solid #777;
     padding: 10px 15px 5px;
+}
+
+@media(max-width: 600px) {
+    header.is-flex-direction-row {
+        display: flex;
+        flex-direction: column !important;
+    }
+
+    header h1.title {
+        font-size: 1.5rem !important;
+        text-align: center;
+    }
+
+    header nav a,
+    header p {
+        font-size: .85rem;
+    }
 }
