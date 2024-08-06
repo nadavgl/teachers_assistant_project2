@@ -1,27 +1,31 @@
 <h1 class="title is-4 ml-6 pl-4">Your Classroom:</h1>
 
-<section class="grid is-col-min-8 mx-6">
+<section class="fixed-grid has-3-cols has-2-cols-mobile mx-6 is-flex-grow-1 is-flex-direction-column">
     {{#if teacher.students}}
     {{#each teacher.students}}
-    <div class="cell is-flex is-flex-direction-column is-flex-grow-1">
-        <h3 class="is-size-5 has-text-weight-bold cell-header">{{name}}</h3>
-        <div class="p-2 flex-1">
-            <p><span class="has-text-weight-bold">Grade:</span> {{grade}}</p>
-            <p><span class="has-text-weight-bold">Bus Number:</span> {{#if bus_number}}{{bus_number}}{{else}} N/A
-                {{/if}}</p>
-            <p><span class="has-text-weight-bold">Teacher Notes:</span> {{#if notes}}{{notes}}{{else}} None {{/if}}
-            </p>
+
+    <div class="grid">
+        <div class="cell is-flex is-flex-direction-column">
+            <h3 class="is-size-5 has-text-weight-bold cell-header">{{name}}</h3>
+            <div class="p-2 flex-1">
+                <p><span class="has-text-weight-bold">Grade:</span> {{grade}}</p>
+                <p><span class="has-text-weight-bold">Bus Number:</span> {{#if bus_number}}{{bus_number}}{{else}} N/A
+                    {{/if}}</p>
+                <p><span class="has-text-weight-bold">Teacher Notes:</span> {{#if notes}}{{notes}}{{else}} None {{/if}}
+                </p>
+            </div>
+
+            <footer class="is-flex is-justify-content-center is-align-items-center">
+                <a id="edit-btn" class="mr-3 p-5" href="/edit/{{id}}">Edit</a>
+
+                <form action="/students/remove/{{id}}?_method=DELETE" method="POST">
+                    <button id="delete-btn" class="p-3" type="submit">Delete</button>
+                </form>
+            </footer>
+
         </div>
-
-        <footer class="is-flex is-justify-content-center is-align-items-center">
-            <a id="edit-btn" class="mr-3 p-5" href="/edit/{{id}}">Edit</a>
-
-            <form action="/students/remove/{{id}}?_method=DELETE" method="POST">
-                <button id="delete-btn" class="p-3" type="submit">Delete</button>
-            </form>
-        </footer>
-
     </div>
+
     {{/each}}
     {{else}}
     <h3>No Students have been added!</h3>
