@@ -1,10 +1,10 @@
 <h1 class="title is-4 ml-6 pl-4">Your Classroom:</h1>
 
-<section class="fixed-grid has-3-cols mx-6 is-flex-grow-1 is-flex-direction-column">
+<section class="fixed-grid has-3-cols has-2-cols-mobile mx-6">
     {{#if teacher.students}}
-    {{#each teacher.students}}
-
     <div class="grid">
+        {{#each teacher.students}}
+
         <div class="cell is-flex is-flex-direction-column">
             <h3 class="is-size-5 has-text-weight-bold cell-header">{{name}}</h3>
             <div class="p-2 flex-1">
@@ -24,9 +24,10 @@
             </footer>
 
         </div>
-    </div>
 
-    {{/each}}
+
+        {{/each}}
+    </div>
     {{else}}
     <h3>No Students have been added!</h3>
     {{/if}}
