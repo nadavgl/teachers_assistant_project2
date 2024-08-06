@@ -1,18 +1,25 @@
 /* RESETS */
-html,
-body {
-    height: 100%;
-
-}
-
-/* Global Styles */
-
 * {
     font-family: "Manjari",
         sans-serif;
     color: rgb(23, 48, 69) !important;
     box-sizing: border-box;
 }
+
+html,
+body {
+    height: 100%;
+
+}
+
+/* Global classes */
+
+.flex-1 {
+    flex: 1;
+
+}
+
+/* Custom styles */
 
 header {
     margin: 30px;
@@ -35,10 +42,10 @@ h1 {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('./images/notepad-3.png');
+    background-image: url('./images/wide-notebook-1.jpg');
     opacity: .4;
     background-size: cover;
-    background-repeat: repeat-y;
+    background-repeat: no-repeat;
     z-index: -3;
 }
 
@@ -46,7 +53,21 @@ h1 {
     box-shadow: -3px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
-form {
+#delete-btn {
+    background-image: url('./images/eraser.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#edit-btn {
+    background-image: url('./images/pencil.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+form:not(.cell form) {
     width: 60% !important;
 }
 
@@ -54,9 +75,22 @@ form {
     margin-left: 25% !important;
 }
 
-footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
+.cell {
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.cell:nth-child(even) {
+    background-color: rgb(170, 241, 238);
+    border: 2px solid rgb(150, 212, 209);
+}
+
+.cell:nth-child(odd) {
+    background-color: rgb(249, 255, 197);
+    border: 2px solid rgb(219, 224, 174);
+}
+
+.cell-header {
+    border-bottom: 1px solid #777;
+    padding: 10px 15px 5px;
 }
