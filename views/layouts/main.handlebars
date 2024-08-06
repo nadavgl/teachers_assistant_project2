@@ -26,11 +26,11 @@
 
 </head>
 
-<body data-theme="light">
+<body class="is-flex is-flex-direction-column">
 
     <header class="is-flex is-flex-direction-row is-justify-content-space-between mt-6">
         <a href="/">
-            <h1 class="title is-3 ml-5">
+            <h1 class="title is-size-5-mobile is-size-3-touch is-size-2-desktop is-size-1-widescreen ml-5">
                 Teacher's Assistant
             </h1>
         </a>
@@ -62,9 +62,11 @@
 
     <div class="background-image"></div>
 
-    {{{body}}}
+    <main class="flex-1">
+        {{{body}}}
+    </main>
 
-    <footer>
+    <footer class="mt-5">
         <div class="has-text-centered">
             <p>&copy; 2024 Teacher's Assistant. All Rights Reserved.</p>
         </div>
