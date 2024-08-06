@@ -33,22 +33,6 @@ header {
 
 h1.title {
     text-shadow: -8px 8px 5px rgba(0, 0, 0, 0.2);
-
-}
-
-.background-image {
-    position: absolute;
-    background-position: center;
-    /* top: 0; */
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    min-height: 100%;
-
-    opacity: .4;
-    background-size: cover;
-    background-repeat: no-repeat;
-    z-index: -3;
 }
 
 .button {
