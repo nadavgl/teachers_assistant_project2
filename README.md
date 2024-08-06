@@ -37,21 +37,7 @@ Christian Yanez's draft/Alisha modified
   This information will be easily viewable by the teacher once the information is inserted.
 
   ## Installation
-  1. Clone the repository:
-    git clone https://github.com/nadavgl/teachers_assistant_project2
-
-  2. Navigate to the project directory: 
-    cd teachers_assistant_project2
-
-  3. Install the dependencies:
-    npm install
-
-  4. Set up the database:
-    Ensure you have PostgresSQL installed and running.
-    Create a `.env` file in the root of your project with your database credentials.
-
-  5. Run the application:
-    npm start
+  Go to https://teachers-assistant-project2.onrender.com
 
   ## Technology Used
   Node.js: JavaScript runtime
