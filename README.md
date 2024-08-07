@@ -64,7 +64,7 @@ Christian Yanez's draft/Alisha modified
   ## Test Instructions
   npm run seed
 
-  ## Useage
+  ## Usage
   To use the application, navigate to the landing page, register as a new teacher or log in if you already have an account. Once logged in, you will be able to view, add, update, delete student records and manage their grades from your dashboard.
 
   1. Register: Teachers register on the landing page.
@@ -74,7 +74,10 @@ Christian Yanez's draft/Alisha modified
     Add new students using a form.
     Update existing student information.
     Delete student information.
- 
+
+   ![Screenshot](./public/assets/images/landing-page-ss.png)
+   ![Screenshot](./public/assets/images/dashboard-ss.png)
+
   ## Contributing:
   Contributions are welcome! Please follow these steps:
     Fork the repository.
